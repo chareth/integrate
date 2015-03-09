@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<!-- JQuery -->
+	    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        
+	    <!-- Latest compiled and minified CSS  -->  
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+          
+
+	    <!-- Optional theme  --> 
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	            
+	    <!-- Latest compiled and minified JavaScript -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	    
+	    <script src="integrate.js"></script>
+
+	 </head>
+
+		<body>
+
+			<h1 id="title">Integral Estimator</h1>
+
+			<p>Estimate the area under a function using the trapezoid or rectangle rule. The higher <i>n</i> is, the more accurate the area.
+			Be sure to use javascript syntax when entering the function. Click <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FMath">here</a> to see the correct syntax.</p>
+
+			<table >
+				<tr title="Input function using javascript syntax and methods; Click to see javascript math syntax">
+					<td >Function</td>
+					<td>
+						<input type="text" id="function">
+					</td>
+				</tr>
+
+				<tr title="Lower bound on x-axis where integration starts">
+					<td >Lower Bound</td>
+					<td>
+						<input type="number" id="lower-bound">
+					</td>
+				</tr>
+
+				<tr title="Upper bound on x-axis where integration ends">
+					<td >Upper Bound</td>
+					<td>
+						<input type="number" id="upper-bound">
+
+					</td>
+				</tr>
+
+				<tr title="Number of intervals">
+					<td >n</td>
+					<td>
+						<input type="number" id="intervals">
+					</td>
+				</tr>
+			</table>
+
+			<p></p>
+			<div id="dropdown" title="Choose the rule to estimate the area">
+
+	            <select id="rule">
+
+	                <option value="0" title="Estimate the area using the midpoint rectangle rule">Rectangle Rule</option>
+	                <option value="1" title="Estimate the area using the trapezoid rule">Trapezoid Rule</option>
+
+	            </select>
+
+        	</div>
+
+			<p></p>
+			<button type="button" id="enter" title="Caclulate definite integral!">Enter</button>
+			<button type="button" id="clear" title="Clear all fields">Clear</button>
+			<p></p>
+
+			<div id="result"></div>
+			
+			<canvas id="graph" width="500px" height="500px"></canvas>
+		</body>
+
+	
+</html>
