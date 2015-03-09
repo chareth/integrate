@@ -56,6 +56,18 @@ function func(x){
 	return eval($('#function').val());
 }
 
+function clearFields(){
+	$('#function').val('');
+	$('#lower-bound').val('');
+	$('#upper-bound').val('');
+	$('#intervals').val('');
+	$('#rule').val(0);
+	$('#result').empty();
+	var canvas = document.getElementById('graph');
+	ctx = canvas.getContext('2d');
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
 // code below from tutorial: http://www.javascripter.net/faq/plotafunctiongraph.htm
 
 function draw(){
@@ -100,17 +112,4 @@ function showAxes(ctx,axes) {
 	ctx.moveTo(xmin,y0); ctx.lineTo(w,y0);  // X axis
 	ctx.moveTo(x0,0);    ctx.lineTo(x0,h);  // Y axis
 	ctx.stroke();
-}
-
-
-function clearFields(){
-	$('#function').val('');
-	$('#lower-bound').val('');
-	$('#upper-bound').val('');
-	$('#intervals').val('');
-	$('#rule').val(0);
-	$('#result').empty();
-	var canvas = document.getElementById('graph');
-	ctx = canvas.getContext('2d');
-	ctx.clearRect(0,0,canvas.width,canvas.height);
 }
